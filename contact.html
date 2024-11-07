@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Contact Us - HomeKnitt</title>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="_video/67blankets.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <header>
+        <img src="_images/logo.jpg" height="100px"  alt="HomeKnitt Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you! Please fill out the form below.</p>
+            <div class=" contact-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.7930632124685!2d31.036413929082332!3d-29.783624677362777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef706574eaf2ed5%3A0x90d85a5467d4bdeb!2s21%20Ennisdale%20Dr%2C%20Durban%20North%2C%204051!5e0!3m2!1sen!2sza!4v1724064199413!5m2!1sen!2sza" width="450" height="460" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                                <form id="contactForm">
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" required>
+                                
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" required>
+                                
+                                    <label for="message">Message:</label>
+                                    <textarea id="message" required></textarea>
+                                
+                                    <button type="submit">Submit</button>
+                                </form>
+                                
+                                <p id="formMessage"></p>
+                                
+                                <script>
+                                    document.getElementById("contactForm").addEventListener("submit", function(event) {
+                                        event.preventDefault();
+                                
+                                        const email = document.getElementById("email").value;
+                                        const formMessage = document.getElementById("formMessage");
+                                        
+                                        // Basic email validation
+                                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                        if (!emailPattern.test(email)) {
+                                            formMessage.textContent = "Please enter a valid email address.";
+                                            formMessage.style.color = "red";
+                                            return;
+                                        }
+                                
+                                        // Success message after correct form submission
+                                        formMessage.textContent = "Thank you for filling out the form!";
+                                        formMessage.style.color = "black";
+                                        
+                                        // Reset the form
+                                        document.getElementById("contactForm").reset();
+                                    });
+                                </script>
+                                
+                                <br>
+        </section>
+    </main>
+    <div class="footer">
+        <p>&copy; 2024 - All rights reserved- South Africa  
+            <a href="https://www.instagram.com/sade.mzila" target="_blank">
+                <img src="_images/insta.jpg" class="social-icon" height="50px">
+                
+            </a>
+            <a href="mailto:sade.mzila@gmail.com">
+                <img src="_images/gmail.jpg" height= "50px">
+            </a>  
+           
+        </p>
+    </div>
+</body>
+</html>
